@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//仮ルート
+Route::middleware('auth')->group(function () {
+    Route::get('/', fn() => '書籍一覧（準備中）')->name('books.index');
 });
