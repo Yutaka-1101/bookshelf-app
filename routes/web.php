@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\GenreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::post('books/{book}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
     Route::resource('reviews', ReviewController::class)
         ->only(['edit', 'update', 'destroy']);
+    Route::resource('genres', GenreController::class);
 });
 
 Route::get('books/{book}', [BookController::class, 'show'])->name('books.show');

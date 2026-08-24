@@ -23,14 +23,14 @@
                     <x-nav-link :href="route('books.create')" :active="request()->routeIs('books.create')">
                         {{ __('書籍登録') }}
                     </x-nav-link>
-                    {{-- 書籍CRUDの動作確認のためコメントアウト
+                    {{-- ジャンル機能の動作確認のためコメントアウト
                     <x-nav-link :href="route('favorites.index')" :active="request()->routeIs('favorites.index')">
                         {{ __('お気に入り') }}
                     </x-nav-link>
+                    --}}
                     <x-nav-link :href="route('genres.index')" :active="request()->routeIs('genres.*')">
                         {{ __('ジャンル管理') }}
                     </x-nav-link>
-                    --}}
                 </div>
             </div>
 
@@ -59,7 +59,7 @@
                             <form method="POST" action="{{ route('logout') }}" novalidate>
                                 @csrf
                                 <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                                            this.closest('form').submit();">
+                                                                        this.closest('form').submit();">
                                     {{ __('ログアウト') }}
                                 </x-dropdown-link>
                             </form>
@@ -102,14 +102,14 @@
             <x-responsive-nav-link :href="route('books.create')" :active="request()->routeIs('books.create')">
                 {{ __('書籍登録') }}
             </x-responsive-nav-link>
-            {{-- 書籍CRUDの動作確認のためコメントアウト
+            {{-- ジャンル機能の動作確認のためコメントアウト
             <x-responsive-nav-link :href="route('favorites.index')" :active="request()->routeIs('favorites.index')">
                 {{ __('お気に入り') }}
             </x-responsive-nav-link>
+            --}}
             <x-responsive-nav-link :href="route('genres.index')" :active="request()->routeIs('genres.*')">
                 {{ __('ジャンル管理') }}
             </x-responsive-nav-link>
-            --}}
         </div>
 
         <!-- Responsive Settings Options -->
@@ -125,7 +125,7 @@
                     <form method="POST" action="{{ route('logout') }}" novalidate>
                         @csrf
                         <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
+                                                                this.closest('form').submit();">
                             {{ __('ログアウト') }}
                         </x-responsive-nav-link>
                     </form>
