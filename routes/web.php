@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,9 @@ Route::get('/', [BookController::class, 'index'])->name('books.index');
 Route::middleware('auth')->group(function () {
     Route::resource('books', BookController::class)
         ->only(['create', 'store', 'edit', 'update', 'destroy']);
+    Route::post('books/{book}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
+    Route::resource('reviews', ReviewController::class)
+        ->only(['edit', 'update', 'destroy']);
 });
 
 Route::get('books/{book}', [BookController::class, 'show'])->name('books.show');

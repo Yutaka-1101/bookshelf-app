@@ -8,7 +8,6 @@ use App\Http\Requests\UpdateBookRequest;
 use App\Models\Book;
 use App\Models\Genre;
 use App\Models\User;
-use App\Policies\BookPolicy;
 
 class BookController extends Controller
 {
