@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//仮ルート
+Route::get('/', [BookController::class, 'index'])->name('books.index');
+
 Route::middleware('auth')->group(function () {
-    Route::get('/', fn() => '書籍一覧（準備中）')->name('books.index');
+    Route::resource('books', BookController::class)
+        ->only(['create', 'store', 'edit', 'update', 'destroy']);
 });
+
+Route::get('books/{book}', [BookController::class, 'show'])->name('books.show');
