@@ -5,6 +5,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\ReviewLikeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,9 @@ Route::middleware('auth')->group(function () {
     //お気に入り
     Route::get('favorites', [FavoriteController::class, 'index'])->name('favorites.index');
     Route::post('books/{book}/favorites', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
+
+    //レビューいいね
+    Route::post('reviews/{review}/like', [ReviewLikeController::class, 'toggle'])->name('reviews.like');
 });
 
 Route::get('books/{book}', [BookController::class, 'show'])->name('books.show');
