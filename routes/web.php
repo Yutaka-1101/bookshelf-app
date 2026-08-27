@@ -6,6 +6,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReviewLikeController;
+use App\Http\Controllers\RankingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,4 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('books/{book}', [BookController::class, 'show'])->name('books.show');
+Route::get('ranking', [RankingController::class, 'index'])->name('ranking.index');
