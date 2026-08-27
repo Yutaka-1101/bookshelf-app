@@ -15,11 +15,9 @@
                     <x-nav-link :href="route('books.index')" :active="request()->routeIs('books.index')">
                         {{ __('書籍一覧') }}
                     </x-nav-link>
-                    {{-- 書籍CRUDの動作確認のためコメントアウト
                     <x-nav-link :href="route('ranking.index')" :active="request()->routeIs('ranking.index')">
                         {{ __('ランキング') }}
                     </x-nav-link>
-                    --}}
                     <x-nav-link :href="route('books.create')" :active="request()->routeIs('books.create')">
                         {{ __('書籍登録') }}
                     </x-nav-link>
@@ -57,7 +55,7 @@
                             <form method="POST" action="{{ route('logout') }}" novalidate>
                                 @csrf
                                 <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                                                            this.closest('form').submit();">
+                                                                                this.closest('form').submit();">
                                     {{ __('ログアウト') }}
                                 </x-dropdown-link>
                             </form>
@@ -92,11 +90,9 @@
             <x-responsive-nav-link :href="route('books.index')" :active="request()->routeIs('books.index')">
                 {{ __('書籍一覧') }}
             </x-responsive-nav-link>
-            {{-- 書籍CRUDの動作確認のためコメントアウト
             <x-responsive-nav-link :href="route('ranking.index')" :active="request()->routeIs('ranking.index')">
                 {{ __('ランキング') }}
             </x-responsive-nav-link>
-            --}}
             <x-responsive-nav-link :href="route('books.create')" :active="request()->routeIs('books.create')">
                 {{ __('書籍登録') }}
             </x-responsive-nav-link>
@@ -121,7 +117,7 @@
                     <form method="POST" action="{{ route('logout') }}" novalidate>
                         @csrf
                         <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
-                                                                    this.closest('form').submit();">
+                                                                        this.closest('form').submit();">
                             {{ __('ログアウト') }}
                         </x-responsive-nav-link>
                     </form>
