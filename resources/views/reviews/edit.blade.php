@@ -19,11 +19,19 @@
 
                         <div class="mb-4">
                             <label class="block text-sm font-medium text-gray-700 mb-2">評価 <span class="text-red-500">*</span></label>
-                            <div class="flex gap-2">
+                            <div class="flex gap-2" id="rating-stars">
                                 @for($i = 1; $i <= 5; $i++)
                                     <label class="cursor-pointer">
-                                        <input type="radio" name="rating" value="{{ $i }}" class="sr-only peer" {{ old('rating', $review->rating) == $i ? 'checked' : '' }} required>
-                                        <span class="text-2xl peer-checked:text-yellow-400 text-gray-300 hover:text-yellow-400">★</span>
+                                        <input type="radio"
+                                        name="rating"
+                                        value="{{ $i }}"
+                                        class="sr-only"
+                                        {{ old('rating', $review->rating) == $i ? 'checked' : '' }} required
+                                        >
+                                        <span class="text-2xl {{ $i <= old('rating', $review->rating) ? 'text-yellow-400' : 'text-gray-300' }}
+                                        ">
+                                            ★
+                                        </span>
                                     </label>
                                 @endfor
                             </div>
@@ -51,4 +59,25 @@
             </div>
         </div>
     </div>
+    <script>
+        const stars = document.querySelectorAll('#rating-stars input');
+
+        stars.forEach((star) => {
+            star.addEventListener('change', function () {
+                const rating = Number(this.value);
+
+                stars.forEach((star, index) => {
+                    const span = star.nextElementSibling;
+
+                    if (index < rating) {
+                        span.classList.remove('text-gray-300');
+                        span.classList.add('text-yellow-400');
+                    } else {
+                        span.classList.remove('text-yellow-400');
+                        span.classList.add('text-gray-300');
+                    }
+                });
+            });
+        });
+    </script>
 </x-app-layout>

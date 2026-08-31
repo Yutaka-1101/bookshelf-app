@@ -23,7 +23,7 @@ class BookSeeder extends Seeder
                 'user_id' => $user->id,
                 'author' => '夏目漱石',
                 'title' => '吾輩は猫である',
-                'published_at' => '1905-01-01',
+                'published_date' => '1905-01-01',
                 'description' => '吾輩は猫であるの書籍説明です',
                 'image_url' => 'https://placehold.co/200x300/e2e8f0/475569?text=1',
             ]
@@ -37,7 +37,7 @@ class BookSeeder extends Seeder
                 'user_id' => $user->id,
                 'author' => 'D・カーネギー',
                 'title' => '人を動かす',
-                'published_at' => '1936-10-01',
+                'published_date' => '1936-10-01',
                 'description' => '人を動かすの書籍説明です',
                 'image_url' => 'https://placehold.co/200x300/e2e8f0/475569?text=2',
             ]
@@ -51,7 +51,7 @@ class BookSeeder extends Seeder
                 'user_id' => $user->id,
                 'author' => 'Dustin Boswell',
                 'title' => 'リーダブルコード',
-                'published_at' => '2012-06-23',
+                'published_date' => '2012-06-23',
                 'description' => 'リーダブルコードの書籍説明です',
                 'image_url' => 'https://placehold.co/200x300/e2e8f0/475569?text=3',
             ]
@@ -65,7 +65,7 @@ class BookSeeder extends Seeder
                 'user_id' => $user->id,
                 'author' => 'スティーブン・R・コヴィー',
                 'title' => '7つの習慣',
-                'published_at' => '2013-08-30',
+                'published_date' => '2013-08-30',
                 'description' => '7つの習慣の書籍説明です',
                 'image_url' => 'https://placehold.co/200x300/e2e8f0/475569?text=4',
             ]
@@ -79,7 +79,7 @@ class BookSeeder extends Seeder
                 'user_id' => $user->id,
                 'author' => '夏目漱石',
                 'title' => '坊っちゃん',
-                'published_at' => '1906-04-01',
+                'published_date' => '1906-04-01',
                 'description' => '坊っちゃんの書籍説明です',
                 'image_url' => 'https://placehold.co/200x300/e2e8f0/475569?text=5',
             ]
@@ -93,7 +93,7 @@ class BookSeeder extends Seeder
                 'user_id' => $user->id,
                 'author' => 'ユヴァル・ノア・ハラリ',
                 'title' => 'サピエンス全史',
-                'published_at' => '2016-09-08',
+                'published_date' => '2016-09-08',
                 'description' => 'サピエンス全史の書籍説明です',
                 'image_url' => 'https://placehold.co/200x300/e2e8f0/475569?text=6',
             ]
@@ -107,7 +107,7 @@ class BookSeeder extends Seeder
                 'user_id' => $user->id,
                 'author' => 'Robert C. Martin',
                 'title' => 'Clean Code',
-                'published_at' => '2017-12-18',
+                'published_date' => '2017-12-18',
                 'description' => 'Clean Codeの書籍説明です',
                 'image_url' => 'https://placehold.co/200x300/e2e8f0/475569?text=7',
             ]
@@ -121,7 +121,7 @@ class BookSeeder extends Seeder
                 'user_id' => $user->id,
                 'author' => '岸見一郎・古賀史健',
                 'title' => '嫌われる勇気',
-                'published_at' => '2013-12-13',
+                'published_date' => '2013-12-13',
                 'description' => '嫌われる勇気の書籍説明です',
                 'image_url' => 'https://placehold.co/200x300/e2e8f0/475569?text=8',
             ]
@@ -135,7 +135,7 @@ class BookSeeder extends Seeder
                 'user_id' => $user->id,
                 'author' => '又吉直樹',
                 'title' => '火花',
-                'published_at' => '2015-03-11',
+                'published_date' => '2015-03-11',
                 'description' => '火花の書籍説明です',
                 'image_url' => 'https://placehold.co/200x300/e2e8f0/475569?text=9',
             ]
@@ -149,7 +149,7 @@ class BookSeeder extends Seeder
                 'user_id' => $user->id,
                 'author' => 'ハンス・ロスリング',
                 'title' => 'FACTFULNESS',
-                'published_at' => '2019-01-11',
+                'published_date' => '2019-01-11',
                 'description' => 'FACTFULNESSの書籍説明です',
                 'image_url' => 'https://placehold.co/200x300/e2e8f0/475569?text=10',
             ]
@@ -163,7 +163,7 @@ class BookSeeder extends Seeder
                 'user_id' => $user->id,
                 'author' => 'マルク・レビンソン',
                 'title' => 'コンテナ物語',
-                'published_at' => '2007-01-18',
+                'published_date' => '2007-01-18',
                 'description' => 'コンテナ物語の書籍説明です',
                 'image_url' => 'https://placehold.co/200x300/e2e8f0/475569?text=11',
             ]

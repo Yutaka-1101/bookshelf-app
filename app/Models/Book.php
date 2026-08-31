@@ -14,14 +14,15 @@ class Book extends Model
         'author',
         'title',
         'isbn',
-        'published_at',
+        'published_date',
         'description',
         'image_url',
     ];
 
-    protected $casts = [
-        'published_at' => 'date',
-    ];
+    public function getPublishedDateAttribute($value)
+    {
+        return \Carbon\Carbon::parse($value)->format('Y-m-d');
+    }
 
     public function user()
     {
