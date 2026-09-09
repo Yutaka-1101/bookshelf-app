@@ -1,12 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\ReviewController;
-use App\Http\Controllers\GenreController;
 use App\Http\Controllers\FavoriteController;
-use App\Http\Controllers\ReviewLikeController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\RankingController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ReviewLikeController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,23 +22,23 @@ use App\Http\Controllers\RankingController;
 Route::get('/', [BookController::class, 'index'])->name('books.index');
 
 Route::middleware('auth')->group(function () {
-    //書籍
+    // 書籍
     Route::resource('books', BookController::class)
         ->only(['create', 'store', 'edit', 'update', 'destroy']);
 
-    //レビュー
+    // レビュー
     Route::post('books/{book}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
     Route::resource('reviews', ReviewController::class)
         ->only(['edit', 'update', 'destroy']);
 
-    //ジャンル
+    // ジャンル
     Route::resource('genres', GenreController::class);
 
-    //お気に入り
+    // お気に入り
     Route::get('favorites', [FavoriteController::class, 'index'])->name('favorites.index');
     Route::post('books/{book}/favorites', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
 
-    //レビューいいね
+    // レビューいいね
     Route::post('reviews/{review}/like', [ReviewLikeController::class, 'toggle'])->name('reviews.like');
 });
 

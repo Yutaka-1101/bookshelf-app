@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreReviewRequest extends FormRequest
@@ -17,13 +18,13 @@ class StoreReviewRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, ValidationRule|array<mixed>|string>
      */
     public function rules(): array
     {
         return [
             'rating' => 'required|integer|between:1,5',
-            'comment' => 'required|string',
+            'comment' => 'required|string|max:255',
         ];
     }
 
@@ -33,7 +34,8 @@ class StoreReviewRequest extends FormRequest
             'rating.required' => '評価は必須です。',
             'rating.integer' => '1～5の数字を選択してください。',
             'rating.between' => '1～5の数字を選択してください。',
-            'comment.required' => 'コメントは必須です。'
+            'comment.required' => 'コメントは必須です。',
+            'comment.max' => 'コメントは255文字以内で入力してください。',
         ];
     }
 }

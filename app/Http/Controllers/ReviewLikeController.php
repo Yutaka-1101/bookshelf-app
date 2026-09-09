@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\ReviewLike;
 use App\Models\Review;
+use App\Models\ReviewLike;
+use Illuminate\Http\Request;
 
 class ReviewLikeController extends Controller
 {
@@ -17,12 +17,12 @@ class ReviewLikeController extends Controller
                 ->where('review_id', $review->id)
                 ->exists()
         ) {
-            //レビューいいね済みの場合、解除
+            // レビューいいね済みの場合、解除
             ReviewLike::where('user_id', $user->id)
                 ->where('review_id', $review->id)
                 ->delete();
         } else {
-            //未登録の場合、登録
+            // 未登録の場合、登録
             ReviewLike::create([
                 'user_id' => $user->id,
                 'review_id' => $review->id,
