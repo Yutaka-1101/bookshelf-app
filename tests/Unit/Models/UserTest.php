@@ -2,24 +2,23 @@
 
 namespace Tests\Unit\Models;
 
-use Tests\TestCase;
-use App\Models\User;
 use App\Models\Book;
-use App\Models\Review;
 use App\Models\Favorite;
+use App\Models\Review;
 use App\Models\ReviewLike;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class UserTest extends TestCase
 {
     /**
      * A basic unit test example.
      */
-
     use RefreshDatabase;
 
     /** @test */
-    public function ユーザーからBookの情報を取得できる(): void
+    public function ユーザーから_bookの情報を取得できる(): void
     {
         $user = User::factory()->create();
 
@@ -31,7 +30,7 @@ class UserTest extends TestCase
     }
 
     /** @test */
-    public function ユーザーからReviewの情報を取得できる(): void
+    public function ユーザーから_reviewの情報を取得できる(): void
     {
         $user = User::factory()->create();
 
@@ -43,7 +42,7 @@ class UserTest extends TestCase
     }
 
     /** @test */
-    public function ユーザーからFavoriteの情報を取得できる(): void
+    public function ユーザーから_favoriteの情報を取得できる(): void
     {
         $user = User::factory()->create();
 
@@ -55,7 +54,7 @@ class UserTest extends TestCase
     }
 
     /** @test */
-    public function ユーザーからReviewLikeの情報を取得できる(): void
+    public function ユーザーから_review_likeの情報を取得できる(): void
     {
         $user = User::factory()->create();
 
@@ -67,7 +66,7 @@ class UserTest extends TestCase
     }
 
     /** @test */
-    public function ユーザーからお気に入り登録したBook一覧を取得できる(): void
+    public function ユーザーからお気に入り登録した_book一覧を取得できる(): void
     {
         $user = User::factory()->create();
         $book = Book::factory()->create();
@@ -78,7 +77,7 @@ class UserTest extends TestCase
     }
 
     /** @test */
-    public function ユーザーからいいねしたReview一覧を取得できる(): void
+    public function ユーザーからいいねした_review一覧を取得できる(): void
     {
         $user = User::factory()->create();
         $review = Review::factory()->create();

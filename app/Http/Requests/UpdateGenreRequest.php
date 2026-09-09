@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -18,7 +19,7 @@ class UpdateGenreRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, ValidationRule|array<mixed>|string>
      */
     protected function prepareForValidation(): void
     {
@@ -33,7 +34,7 @@ class UpdateGenreRequest extends FormRequest
             'name' => [
                 'required',
                 'string',
-                'max:255',
+                'max:20',
                 Rule::unique('genres', 'name')->ignore($this->genre),
             ],
         ];
@@ -44,7 +45,7 @@ class UpdateGenreRequest extends FormRequest
         return [
             'name.required' => 'ジャンル名は必須です。',
             'name.string' => 'ジャンル名は文字列で入力してください。',
-            'name.max' => 'ジャンル名は255文字以内で入力してください。',
+            'name.max' => 'ジャンル名は20文字以内で入力してください。',
             'name.unique' => 'このジャンル名は既に登録されています。',
         ];
     }

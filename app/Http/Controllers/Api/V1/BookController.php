@@ -9,7 +9,6 @@ use App\Http\Requests\Api\V1\UpdateBookRequest;
 use App\Http\Resources\BookResource;
 use App\Models\Book;
 
-
 class BookController extends Controller
 {
     /**

@@ -63,7 +63,7 @@ class BookController extends Controller
         $book->load([
             'genres',
             'reviews.user',
-            'reviews.likedByUsers'
+            'reviews.likedByUsers',
         ]);
 
         return view('books.show', compact('book'));

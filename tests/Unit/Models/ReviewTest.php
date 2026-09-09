@@ -2,19 +2,18 @@
 
 namespace Tests\Unit\Models;
 
-use Tests\TestCase;
-use App\Models\Review;
-use App\Models\User;
 use App\Models\Book;
+use App\Models\Review;
 use App\Models\ReviewLike;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class ReviewTest extends TestCase
 {
     /**
      * A basic unit test example.
      */
-
     use RefreshDatabase;
 
     /** @test */

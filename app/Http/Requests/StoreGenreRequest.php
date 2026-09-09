@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreGenreRequest extends FormRequest
@@ -17,9 +18,8 @@ class StoreGenreRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, ValidationRule|array<mixed>|string>
      */
-
     protected function prepareForValidation(): void
     {
         $this->merge([
@@ -30,7 +30,7 @@ class StoreGenreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255|unique:genres,name',
+            'name' => 'required|string|max:20|unique:genres,name',
         ];
     }
 
@@ -39,7 +39,7 @@ class StoreGenreRequest extends FormRequest
         return [
             'name.required' => 'ジャンル名は必須です。',
             'name.string' => 'ジャンル名は文字列で入力してください。',
-            'name.max' => 'ジャンル名は255文字以内で入力してください。',
+            'name.max' => 'ジャンル名は20文字以内で入力してください。',
             'name.unique' => 'このジャンル名は既に登録されています。',
         ];
     }

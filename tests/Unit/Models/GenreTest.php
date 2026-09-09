@@ -2,21 +2,20 @@
 
 namespace Tests\Unit\Models;
 
-use Tests\TestCase;
-use App\Models\Genre;
 use App\Models\Book;
+use App\Models\Genre;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class GenreTest extends TestCase
 {
     /**
      * A basic unit test example.
      */
-
     use RefreshDatabase;
 
     /** @test */
-    public function ジャンルからBook一覧を取得できる(): void
+    public function ジャンルから_book一覧を取得できる(): void
     {
         $genre = Genre::factory()->create();
         $book = Book::factory()->create();

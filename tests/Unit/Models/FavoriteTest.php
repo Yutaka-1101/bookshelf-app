@@ -2,18 +2,17 @@
 
 namespace Tests\Unit\Models;
 
-use Tests\TestCase;
-use App\Models\Favorite;
 use App\Models\Book;
+use App\Models\Favorite;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class FavoriteTest extends TestCase
 {
     /**
      * A basic unit test example.
      */
-
     use RefreshDatabase;
 
     /** @test */
@@ -23,7 +22,6 @@ class FavoriteTest extends TestCase
         $favorite = Favorite::factory()->create([
             'user_id' => $user->id,
         ]);
-
 
         $this->assertTrue($favorite->user->is($user));
     }
@@ -37,7 +35,6 @@ class FavoriteTest extends TestCase
             'user_id' => $user->id,
             'book_id' => $book->id,
         ]);
-
 
         $this->assertTrue($favorite->book->is($book));
     }

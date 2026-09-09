@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Favorite;
 use App\Models\Book;
+use App\Models\Favorite;
+use Illuminate\Http\Request;
 
 class FavoriteController extends Controller
 {
@@ -26,12 +26,12 @@ class FavoriteController extends Controller
                 ->where('book_id', $book->id)
                 ->exists()
         ) {
-            //お気に入り済みの場合、解除
+            // お気に入り済みの場合、解除
             Favorite::where('user_id', $user->id)
                 ->where('book_id', $book->id)
                 ->delete();
         } else {
-            //未登録の場合、登録
+            // 未登録の場合、登録
             Favorite::create([
                 'user_id' => $user->id,
                 'book_id' => $book->id,

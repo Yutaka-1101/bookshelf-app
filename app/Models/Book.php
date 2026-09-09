@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,13 +22,14 @@ class Book extends Model
 
     public function getPublishedDateAttribute($value)
     {
-        return \Carbon\Carbon::parse($value)->format('Y-m-d');
+        return Carbon::parse($value)->format('Y-m-d');
     }
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+
     public function genres()
     {
         return $this->belongsToMany(Genre::class);
