@@ -36,7 +36,7 @@ class UpdateBookRequest extends FormRequest
             'genres' => 'required|array|min:1',
             'genres.*' => 'integer|exists:genres,id',
             'description' => 'nullable|string',
-            'image_url' => 'nullable|string|url',
+            'image_url' => 'nullable|string|url|max:255',
         ];
     }
 

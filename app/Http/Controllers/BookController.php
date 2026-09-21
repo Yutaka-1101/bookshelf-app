@@ -51,7 +51,7 @@ class BookController extends Controller
         $book->genres()->sync($validated['genres']);
 
         return redirect()
-            ->route('books.index')
+            ->route('books.show', $book)
             ->with('success', '書籍を登録しました');
     }
 

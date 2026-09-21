@@ -84,7 +84,7 @@ class GenreController extends Controller
         if ($genre->books()->exists()) {
             return redirect()
                 ->route('genres.index')
-                ->with('error', '書籍が紐づいているため削除できません');
+                ->with('error', 'このジャンルには書籍が紐づいているため削除できません');
         }
 
         $genre->delete();
